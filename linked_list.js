@@ -1,5 +1,5 @@
 class Node {
-    
+
     constructor(value) {
         this.value = value;
         this.next = null;
@@ -137,4 +137,4 @@ console.log(list.contains(3));
 
 // list.clear();
 
-console.log(list + '');
+console.log(list.toString());
