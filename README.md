@@ -7,3 +7,6 @@
   - [Computer science in JavaScript: Selection sort](https://www.nczonline.net/blog/2009/09/08/computer-science-in-javascript-selection-sort/)
   - [Binary Search](https://www.youtube.com/watch?v=P3YID7liBug)
   - [Computer science in JavaScript: Binary search](https://www.nczonline.net/blog/2009/09/01/computer-science-in-javascript-binary-search/)
+  - [Functional Inheritance](https://learn.javascript.ru/functional-inheritance)
+  - [Prototypes](https://learn.javascript.ru/prototypes)
+  - [ES6 features](https://learn.javascript.ru/es-modern)
