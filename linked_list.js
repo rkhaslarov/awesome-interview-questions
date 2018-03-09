@@ -9,7 +9,6 @@ class Node {
 class LinkedList {
 
     constructor() {
-
         this._head = null;
         this._tail = null;
         this._size = 0;
@@ -112,7 +111,7 @@ class LinkedList {
     }
 
     toString() {
-
+        
         return `
             Head: ${this._head && this._head.value},
             Tail: ${this._tail && this._tail.value},

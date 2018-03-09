@@ -23,11 +23,9 @@ function selectionSort(array) {
         if (min != i) {
             swap(result, i, min);
         }
-
     }
 
     return result;
 }
-
 
 console.log(selectionSort([8, 1, 3, 10, 4, 5, 3, 7, 9]));
