@@ -33,11 +33,13 @@ function partition(array, left, right) {
 
 function quickSort(array, left, right) {
 
-    let index = 0;
+    if (left >= right) {
+        return;
+    }
 
     if (array.length > 1) {
 
-        index = partition(array, left, right);
+        const index = partition(array, left, right);
 
         if (left < index - 1) {
             quickSort(array, left, index - 1);
