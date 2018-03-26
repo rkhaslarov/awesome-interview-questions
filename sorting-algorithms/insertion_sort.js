@@ -20,4 +20,3 @@ function insertionSort(array) {
 }
 
 console.log(insertionSort([1, 8, 3, 10, 4, 5, 3, 7, 9]));
-[5, 3, 1, 2, 4]
