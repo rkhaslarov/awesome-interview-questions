@@ -30,11 +30,7 @@ function partition(array, left, right) {
 
 function quickSort(array, left, right) {
 
-    if (left >= right) {
-        return;
-    }
-
-    if (array.length > 1) {
+    if (left < right && array.length) {
 
         const index = partition(array, left, right);
 
@@ -46,10 +42,10 @@ function quickSort(array, left, right) {
             quickSort(array, index, right);
         }
     }
-
-    return array;
 }
 
 const array = [8, 1, 3, 10, 4, 5, 3, 7, 9];
 
-console.log(quickSort(array, 0, array.length - 1));
+quickSort(array, 0, array.length - 1)
+
+console.log(array);
