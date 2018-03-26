@@ -30,7 +30,4 @@ function merge(left, right) {
     return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight));
 }
 
-
-
-
 console.log(mergeSort([8, 1, 3, 10, 4, 5, 3, 7, 9]))
