@@ -10,18 +10,19 @@
 
 function chunk(array, size) {
 
-  const chunked = [];
-  let index = 0;
+    const chunked = [];
+    let index = 0;
 
-  while (index < array.length) {
-    chunked.push(array.slice(index, index + size));
-    index += size;
-  }
+    while (index < array.length) {
+        chunked.push(array.slice(index, index + size));
+        index += size;
+    }
 
-  return chunked;
+    return chunked;
 }
 
 function chunk(array, size) {
+
     return array.reduce((chunked, current) => {
 
         const last = chunked[chunked.length - 1];
@@ -31,6 +32,23 @@ function chunk(array, size) {
         } else {
             last.push(current);
         }
+
+        return chunked;
+
+    }, []);
+}
+
+function chunk(array, size) {
+
+    return array.reduce((chunked, current, index) => {
+
+        const chunkIndex = Math.floor(index / size);
+
+        if (!chunked[chunkIndex]) {
+            chunked[chunkIndex] = [];
+        }
+
+        chunked[chunkIndex].push(current);
 
         return chunked;
 
