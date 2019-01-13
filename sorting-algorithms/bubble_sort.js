@@ -32,4 +32,30 @@ function bubbleSort(array) {
     return result;
 }
 
+function bubbleSort(array) {
+
+    const result = [...array];
+
+    let swapped = false;
+
+    do {
+
+        swapped = false;
+
+        for (let i = 0; i < array.length; i++) {
+
+            const prev = result[i - 1];
+            const next = result[i];
+
+            if (prev > next) {
+                swapped = true;
+                swap(result, i - 1, i);
+            }
+        }
+
+    } while (swapped);
+
+    return result;
+}
+
 console.log(bubbleSort([8, 1, 3, 10, 4, 5, 3, 7, 9]));
