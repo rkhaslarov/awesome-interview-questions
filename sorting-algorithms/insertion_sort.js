@@ -20,12 +20,10 @@
 // The inner loop goes over the sorted part of the list and inserts it into the correct position in the array.
 
 function insertionSort(array) {
-
     const result = [...array];
 
     for (let i = 1; i < result.length; i++) {
-
-        let temp = result[i];
+        const temp = result[i];
         let newIndexToPlace = i;
 
         for (let j = i - 1; j >= 0 && result[j] > temp; j--) {
@@ -39,13 +37,11 @@ function insertionSort(array) {
     return result;
 }
 
-function insertionSort(array) {
-
+function insertionSort2(array) {
     const result = [...array];
 
     for (let i = 1; i < result.length; i++) { // loop through unsorted part of the array
-
-        let temp = result[i];
+        const temp = result[i];
         let j = i - 1;
 
         while (j >= 0 && result[j] > temp) { // find the index in sorted part of the array
@@ -60,3 +56,4 @@ function insertionSort(array) {
 }
 
 console.log(insertionSort([8, 1, 3, 10, 4, 5, 3, 7, 9]));
+console.log(insertionSort2([8, 1, 3, 10, 4, 5, 3, 7, 9]));

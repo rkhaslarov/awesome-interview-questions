@@ -5,22 +5,20 @@ function swap(array, prev, next) {
 }
 
 function selectionSort(array) {
-
     const result = [...array];
 
     let min = 0;
 
     for (let i = 0; i < result.length; i++) {
-
         min = i;
 
-        for (j = i + 1; j < result.length; j++) {
+        for (let j = i + 1; j < result.length; j++) {
             if (result[j] < result[min]) {
                 min = j;
             }
         }
 
-        if (min != i) {
+        if (min !== i) {
             swap(result, i, min);
         }
     }

@@ -9,7 +9,6 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
-
     const chunked = [];
     let index = 0;
 
@@ -21,10 +20,8 @@ function chunk(array, size) {
     return chunked;
 }
 
-function chunk(array, size) {
-
+function chunk2(array, size) {
     return array.reduce((chunked, current) => {
-
         const last = chunked[chunked.length - 1];
 
         if (!last || last.length === size) {
@@ -34,14 +31,11 @@ function chunk(array, size) {
         }
 
         return chunked;
-
     }, []);
 }
 
-function chunk(array, size) {
-
+function chunk3(array, size) {
     return array.reduce((chunked, current, index) => {
-
         const chunkIndex = Math.floor(index / size);
 
         if (!chunked[chunkIndex]) {
@@ -51,8 +45,9 @@ function chunk(array, size) {
         chunked[chunkIndex].push(current);
 
         return chunked;
-
     }, []);
 }
 
 console.log(chunk([1, 2, 3, 4], 2));
+console.log(chunk2([1, 2, 3, 4], 2));
+console.log(chunk3([1, 2, 3, 4], 2));

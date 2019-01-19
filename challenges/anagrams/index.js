@@ -8,12 +8,17 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {
-    return stringA === stringB || sanitize(stringA) === sanitize(stringB);
+function sanitize(string) {
+    return string
+        .replace(/[^\w]/g, '')
+        .toLowerCase()
+        .split('')
+        .sort()
+        .join('');
 }
 
-function sanitize(string) {
-    return string.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
+function anagrams(stringA, stringB) {
+    return stringA === stringB || sanitize(stringA) === sanitize(stringB);
 }
 
 console.log(anagrams('RAIL! SAFETY!', 'fairy tales'));

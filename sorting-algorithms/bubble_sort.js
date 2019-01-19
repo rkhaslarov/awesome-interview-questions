@@ -1,4 +1,4 @@
-// This is often the easiest to conceptualize and a natural way 
+// This is often the easiest to conceptualize and a natural way
 // for the brain to think about sorting so it's typical to do bubble sort first.
 // It's also amongst the least efficient in terms of worst case scenario.
 //
@@ -19,17 +19,14 @@ function swap(array, prev, next) {
 }
 
 function bubbleSort(array) {
-
     const result = [...array];
 
     let isSorted = false;
 
     for (let padding = 0; padding < result.length; padding++) {
-
         isSorted = true;
 
         for (let counter = 1; counter < result.length - padding; counter++) {
-
             const prev = result[counter - 1];
             const next = result[counter];
 
@@ -39,25 +36,21 @@ function bubbleSort(array) {
             }
         }
 
-        if (isSorted)
-            break;
+        if (isSorted) { break; }
     }
 
     return result;
 }
 
-function bubbleSort(array) {
-
+function bubbleSort2(array) {
     const result = [...array];
 
     let swapped = false;
 
     do {
-
         swapped = false;
 
         for (let i = 0; i < array.length; i++) {
-
             const prev = result[i - 1];
             const next = result[i];
 
@@ -66,10 +59,10 @@ function bubbleSort(array) {
                 swap(result, i - 1, i);
             }
         }
-
     } while (swapped);
 
     return result;
 }
 
 console.log(bubbleSort([8, 1, 3, 10, 4, 5, 3, 7, 9]));
+console.log(bubbleSort2([8, 1, 3, 10, 4, 5, 3, 7, 9]));

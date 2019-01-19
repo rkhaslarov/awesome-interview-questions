@@ -1,5 +1,4 @@
 class Node {
-
     constructor(value) {
         this.value = value;
         this.next = null;
@@ -7,7 +6,6 @@ class Node {
 }
 
 class LinkedList {
-
     constructor() {
         this._head = null;
         this._tail = null;
@@ -23,7 +21,6 @@ class LinkedList {
     }
 
     add(value) {
-
         const node = new Node(value);
 
         if (this._head === null) {
@@ -38,11 +35,9 @@ class LinkedList {
     }
 
     contains(value) {
-
         let current = this._head;
 
         while (current) {
-
             if (current.value === value) {
                 return true;
             }
@@ -54,24 +49,18 @@ class LinkedList {
     }
 
     remove(value) {
-
         let current = this._head;
         let previous = null;
 
         while (current) {
-
             if (current.value === value) {
-
                 if (previous !== null) {
-
                     previous.next = current.next;
 
                     if (!current.next) {
                         this._tail = previous;
                     }
-
                 } else {
-
                     this._head = this._head.next;
 
                     if (this._head === null) {
@@ -98,9 +87,8 @@ class LinkedList {
     }
 
     toArray() {
-
         let current = this._head;
-        let result = [];
+        const result = [];
 
         while (current) {
             result.push(current.value);
@@ -111,7 +99,6 @@ class LinkedList {
     }
 
     toString() {
-        
         return `
             Head: ${this._head && this._head.value},
             Tail: ${this._tail && this._tail.value},

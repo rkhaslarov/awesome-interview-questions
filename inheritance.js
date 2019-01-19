@@ -14,18 +14,18 @@ console.log(b.sayHi());
 
 // Prototype inheritance
 
-function C(){}
+function C() {}
 
 C.prototype.sayHi = () => 'Hi, Prototype inheritance!';
 
-function D(){}
+function D() {}
 
 function extend(Child, Parent) {
     function Temp() {}
     Temp.prototype = Parent.prototype;
     Child.prototype = new Temp();
     Child.prototype.constructor = Child;
-    Child.superclass = Parent.prototype
+    Child.superclass = Parent.prototype;
 }
 
 extend(D, C);
@@ -41,7 +41,7 @@ console.log(d.sayBye());
 
 class E {
     sayHi() {
-        return 'Hi, ES6!'
+        return 'Hi, ES6!';
     }
 }
 

@@ -5,11 +5,9 @@ function swap(array, prev, next) {
 }
 
 function partition(array, left, right) {
-
     const pivot = array[Math.floor((right + left) / 2)];
 
     while (left <= right) {
-
         while (array[left] < pivot) {
             left++;
         }
@@ -29,9 +27,7 @@ function partition(array, left, right) {
 }
 
 function quickSort(array, left, right) {
-
     if (left < right && array.length) {
-
         const index = partition(array, left, right);
 
         if (left < index - 1) {
@@ -46,6 +42,6 @@ function quickSort(array, left, right) {
 
 const array = [8, 1, 3, 10, 4, 5, 3, 7, 9];
 
-quickSort(array, 0, array.length - 1)
+quickSort(array, 0, array.length - 1);
 
 console.log(array);

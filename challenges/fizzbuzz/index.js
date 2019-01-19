@@ -28,10 +28,11 @@ function fizzbuzz(n) {
 }
 
 // using ternary operator
-function fizzbuzz(n) {
+function fizzbuzz2(n) {
     for (let i = 1; i <= n; i++) {
         console.log(((i % 3 ? '' : 'fizz') + (i % 5 ? '' : 'buzz')) || i);
     }
 }
 
 fizzbuzz(5);
+fizzbuzz2(5);

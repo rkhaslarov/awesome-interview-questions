@@ -15,13 +15,12 @@ function fib(n) {
     return n <= 1 ? n : fib(n - 1) + fib(n - 2);
 }
 
-function fib(n) {
-
+function fib2(n) {
     let a = 1;
     let b = 1;
 
     for (let i = 3; i <= n; i++) {
-        let c = a + b;
+        const c = a + b;
         a = b;
         b = c;
     }
@@ -29,16 +28,16 @@ function fib(n) {
     return b;
 }
 
-function fib(n) {
-
+function fib3(n) {
     const seq = [1, 1];
 
     for (let i = 2; i < n; i++) {
-    	seq[i] = seq[i-1] + seq[i-2];
+        seq[i] = seq[i - 1] + seq[i - 2];
     }
 
-    return seq[n-1];
+    return seq[n - 1];
 }
 
 console.log(fib(1)); // 1
-console.log(fib(4)); // 3
+console.log(fib2(4)); // 3
+console.log(fib3(4)); // 3
