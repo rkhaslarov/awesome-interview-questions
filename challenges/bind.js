@@ -5,15 +5,16 @@
     which cannot be overridden.
 */
 
+/* eslint-disable no-extend-native, prefer-rest-params */
+
 const foo = {
     name: 'Bar',
-    sayHello: function() {
-        console.log('Hi, ' + ' ' + this.name);
-    }
+    sayHello() {
+        console.log(`${'Hi, '}${this.name}`);
+    },
 };
 
-Function.prototype.bind = function(context) {
-
+Function.prototype.bind = function bind(context) {
     if (typeof this !== 'function') {
         throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
     }
@@ -21,7 +22,7 @@ Function.prototype.bind = function(context) {
     const func = this;
     const previousArgs = [].slice.call(arguments, 1);
 
-    return function(){
+    return () => {
         const currentArgs = [].slice.call(arguments);
         return func.apply(context, [].concat(previousArgs, currentArgs));
     };
@@ -32,7 +33,7 @@ const sayHello = foo.sayHello.bind(foo);
 console.log(sayHello());
 
 // You can of course binds multiple arguments, so:
-const sum = function(a, b, c) { return a + b + c };
+function sum(a, b, c) { return a + b + c; }
 const sumAB = sum.bind(null, 1, 5);
 const sumC = sumAB.bind(null, 2);
 

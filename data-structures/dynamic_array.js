@@ -1,20 +1,19 @@
 class DynamicArray {
-
     constructor(size) {
         this.data = new Array(size);
         this.count = 0;
     }
 
     resize() {
-
         const capacity = this.data.length === 0 ? 4 : this.data.length * 2;
 
         const newArray = new Array(capacity);
 
-        this.data.forEach((v, i) => newArray[i] = v);
+        this.data.forEach((v, i) => {
+            newArray[i] = v;
+        });
 
         this.data = newArray;
-
     }
 
     isFull() {
@@ -22,7 +21,6 @@ class DynamicArray {
     }
 
     add(value) {
-
         if (this.isFull()) {
             this.resize();
         }
@@ -31,7 +29,6 @@ class DynamicArray {
     }
 
     insertAt(value, index) {
-
         if (index > this.count) {
             return;
         }
@@ -42,15 +39,14 @@ class DynamicArray {
 
         const initial = [...this.data];
 
-        for (let i=index; i < this.count; i++) {
-            this.data[i+1] = initial[i];
+        for (let i = index; i < this.count; i++) {
+            this.data[i + 1] = initial[i];
         }
 
         this.data[index] = value;
 
         this.count++;
     }
-
 }
 
 const arr = new DynamicArray(4);
