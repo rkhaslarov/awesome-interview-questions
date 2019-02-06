@@ -9,16 +9,18 @@
 //   reverseInt(-90) === -9
 
 function reverseInt(int) {
-    const reversedInt = parseInt(int.toString().split('').reverse().join(''));
+    const reversedStr = int.toString().split('').reverse().join('');
+    const reversedInt = parseInt(reversedStr, 10);
     return int < 0 ? reversedInt * -1 : reversedInt;
 }
 
-function reverseInt(int) {
-    const reversedInt = parseInt(int.toString().split('').reverse().join(''));
+function reverseInt2(int) {
+    const reversedStr = int.toString().split('').reverse().join('');
+    const reversedInt = parseInt(reversedStr, 10);
     return reversedInt * Math.sign(int);
 }
 
 console.log(reverseInt(51)); // 15
 console.log(reverseInt(-51)); // -15
-console.log(reverseInt(500)); // 5
-console.log(reverseInt(-500)); // -5
+console.log(reverseInt2(500)); // 5
+console.log(reverseInt2(-500)); // -5
