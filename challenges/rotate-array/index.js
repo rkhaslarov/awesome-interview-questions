@@ -28,10 +28,6 @@ function rotate(nums, k) {
 function rotate2(nums, k) {
     let steps = k % nums.length;
 
-    if (steps === 0) {
-        return;
-    }
-
     while (steps--) {
         nums.unshift(nums.pop());
     }
@@ -39,10 +35,6 @@ function rotate2(nums, k) {
 
 function rotate3(nums, k) {
     let steps = k % nums.length;
-
-    if (steps === 0) {
-        return nums;
-    }
 
     while (steps--) {
         for (let i = 0; i < nums.length - 1; i++) {
