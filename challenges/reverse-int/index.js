@@ -20,7 +20,23 @@ function reverseInt2(int) {
     return reversedInt * Math.sign(int);
 }
 
+function reverseInt3(x) {
+    let num = Math.abs(x);
+    let result = 0;
+    let rem = 0;
+
+    while (num > 0) {
+        rem = num % 10;
+        result = result * 10 + rem;
+        num = Math.floor(num / 10);
+    }
+
+    return x < 0 ? result * -1 : result;
+}
+
+
 console.log(reverseInt(51)); // 15
 console.log(reverseInt(-51)); // -15
 console.log(reverseInt2(500)); // 5
 console.log(reverseInt2(-500)); // -5
+console.log(reverseInt3(-51)); // -15
