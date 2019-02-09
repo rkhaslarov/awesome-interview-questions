@@ -27,8 +27,8 @@ function reverseInt3(x) {
 
     while (num > 0) {
         rem = num % 10;
-        result = result * 10 + rem;
-        num = Math.floor(num / 10);
+        num = Math.floor(num / 10); // pop operation
+        result = result * 10 + rem; // push operation
     }
 
     return x < 0 ? result * -1 : result;
@@ -40,3 +40,4 @@ console.log(reverseInt(-51)); // -15
 console.log(reverseInt2(500)); // 5
 console.log(reverseInt2(-500)); // -5
 console.log(reverseInt3(-51)); // -15
+console.log(reverseInt3(15)); // -15
