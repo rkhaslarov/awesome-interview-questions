@@ -1,5 +1,5 @@
 /**
- * Given an array, rotate the array to the right by k steps, where k is non-negative.
+ * Given an array, rotate the array to the right by k steps.
  * Input: [1,2,3,4,5,6,7] and k = 3 Output: [5,6,7,1,2,3,4]
  * Explanation:
  * rotate 1 steps to the right: [7,1,2,3,4,5,6]
@@ -10,7 +10,7 @@
 function rotate(nums, k) {
     const steps = k % nums.length;
 
-    if (steps === 0) {
+    if (steps <= 0) {
         return;
     }
 
@@ -28,7 +28,7 @@ function rotate(nums, k) {
 function rotate2(nums, k) {
     let steps = k % nums.length;
 
-    if (steps === 0) {
+    if (steps <= 0) {
         return;
     }
 
@@ -40,8 +40,8 @@ function rotate2(nums, k) {
 function rotate3(nums, k) {
     let steps = k % nums.length;
 
-    if (steps === 0) {
-        return nums;
+    if (steps <= 0) {
+        return;
     }
 
     while (steps--) {
@@ -51,9 +51,16 @@ function rotate3(nums, k) {
             nums[nums.length - 1] = temp;
         }
     }
-    return nums;
 }
 
-console.log(rotate([1, 2, 3, 4, 5, 6, 7], 3)); // [5,6,7,1,2,3,4]
-console.log(rotate2([2, 1], 3)); // [1,2]
-console.log(rotate3([-1], 2)); // [-1]
+const nums1 = [1, 2, 3, 4, 5, 6, 7];
+rotate(nums1, 3);
+console.log(nums1); // [5,6,7,1,2,3,4]
+
+const nums2 = [2, 1];
+rotate2(nums2, 3);
+console.log(nums2); // [1,2]
+
+const nums3 = [-1];
+rotate3(nums3, 3);
+console.log(nums3); // [-1]
