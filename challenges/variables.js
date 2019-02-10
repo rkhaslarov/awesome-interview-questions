@@ -12,6 +12,13 @@ function task1() {
 }
 
 function task2() {
+    function greet (person) {
+        return person == { name: 'Molly' } ? 1 : 0;
+    }
+    console.log(greet({ name: 'Molly' }));  
+}
+
+function task3() {
     let left = 'left';
     let right = 'right';
     
@@ -25,7 +32,7 @@ function task2() {
     console.log(left, right);
 }
 
-function task3() {
+function task4() {
     let outer = 'outer';
 
     {
@@ -37,7 +44,7 @@ function task3() {
     console.log(outer);
 }
 
-function task4() {
+function task5() {
     var flag = 0;
 
     function foo() {
@@ -53,7 +60,7 @@ function task4() {
     console.log(flag);
 }
 
-function task5() {
+function task6() {
     for (var i = 0; i < 10; i++) {
         setTimeout(() => {
             console.log(i);
