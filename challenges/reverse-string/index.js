@@ -8,7 +8,6 @@
 
 // using for loop
 function reverse(str) {
-
     let result = '';
 
     for (let i = str.length - 1; i >= 0; i--) {
@@ -20,10 +19,9 @@ function reverse(str) {
 
 // using for of loop
 function reverse2(str) {
-
     let result = '';
 
-    for (let char of str) {
+    for (const char of str) {
         result = char + result;
     }
 
@@ -40,7 +38,32 @@ function reverse4(str) {
     return str.split('').reduce((result, char) => char + result, '');
 }
 
+// using in-place algorithm
+function reverse5(s) {
+    let start = 0;
+    let end = s.length - 1;
+
+    while (start < end) {
+        if (s[start] !== s[end]) {
+            [s[start], s[end]] = [s[end], s[start]];
+        }
+
+        start++;
+        end--;
+    }
+}
+
+function reverse6(s) {
+    for (let start = 0, end = s.length - 1; start < end; ++start, --end) {
+        if (s[start] !== s[end]) {
+            [s[start], s[end]] = [s[end], s[start]];
+        }
+    }
+}
+
 console.log(reverse('hello')); // olleh
 console.log(reverse2('hello')); // olleh
 console.log(reverse3('hello')); // olleh
 console.log(reverse4('hello')); // olleh
+console.log(reverse5(['H', 'a', 'n', 'n', 'a', 'h']));
+console.log(reverse6(['H', 'a', 'n', 'n', 'a', 'h']));
