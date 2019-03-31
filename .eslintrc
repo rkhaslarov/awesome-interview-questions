@@ -5,6 +5,7 @@
         "no-plusplus": "off",
         "max-len": ["error", 120],
         "no-console": "off",
-        "no-param-reassign": "off"
+        "no-param-reassign": "off",
+        "no-continue": "off"
     }
 }
