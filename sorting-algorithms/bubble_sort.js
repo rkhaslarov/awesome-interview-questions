@@ -52,7 +52,7 @@ function bubbleSort2(array) {
     do {
         swapped = false;
 
-        for (let i = 0; i < array.length; i++) {
+        for (let i = 1; i < array.length; i++) {
             const prev = result[i - 1];
             const next = result[i];
 
